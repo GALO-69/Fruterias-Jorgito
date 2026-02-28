@@ -9,7 +9,19 @@ PRECIOS = {
     "Manzana": 0.50,
     "Banana": 0.30,
     "Naranja": 0.40,
-    "Pera": 0.60
+    "Pera": 0.60,
+    "Uva": 0.80,
+    "Fresa": 0.70,
+    "Melon": 1.00,
+    "Sandia": 1.20,
+    "Piña": 1.50,
+    "Mango": 1.80,
+    "Kiwi": 1.00,
+    "Durazno": 0.90,
+    "Cereza": 1.10,
+    "Frambuesa": 1.30,
+    "Arandano": 1.40,
+    "Ciruela": 0.75,
 }
 
 CANTIDAD_MAXIMA = 100
