@@ -49,7 +49,7 @@ def agregar_fruta():
     fruta = input("Nombre de la fruta: ").capitalize()
 
     if fruta not in PRECIOS:
-        print("❌ Fruta no permitida.")
+        print(" Fruta no permitida.")
         return
 
     try:
@@ -57,7 +57,7 @@ def agregar_fruta():
         if cantidad <= 0:
             raise ValueError
     except ValueError:
-        print("❌ Cantidad inválida.")
+        print(" Cantidad inválida.")
         return
 
     fila = buscar_fruta(ws, fruta)
@@ -67,22 +67,22 @@ def agregar_fruta():
         nueva = cantidad_actual + cantidad
 
         if nueva > CANTIDAD_MAXIMA:
-            print("❌ Supera el máximo permitido.")
+            print(" Supera el máximo permitido.")
             return
 
         fila[1].value = nueva
     else:
         if cantidad < CANTIDAD_MINIMA:
-            print("❌ Debe iniciar con mínimo 25.")
+            print(" Debe iniciar con mínimo 25.")
             return
         if cantidad > CANTIDAD_MAXIMA:
-            print("❌ Supera el máximo permitido.")
+            print(" Supera el máximo permitido.")
             return
 
         ws.append([fruta, cantidad, PRECIOS[fruta]])
 
     wb.save(ARCHIVO)
-    print("✅ Inventario actualizado en Excel.")
+    print(" Inventario actualizado en Excel.")
 
 
 def vender_fruta():
@@ -93,7 +93,7 @@ def vender_fruta():
     fila = buscar_fruta(ws, fruta)
 
     if not fila:
-        print("❌ Fruta no encontrada.")
+        print(" Fruta no encontrada.")
         return
 
     try:
@@ -101,26 +101,26 @@ def vender_fruta():
         if cantidad <= 0:
             raise ValueError
     except ValueError:
-        print("❌ Cantidad inválida.")
+        print(" Cantidad inválida.")
         return
 
     cantidad_actual = fila[1].value
     nueva = cantidad_actual - cantidad
 
     if nueva < CANTIDAD_MINIMA:
-        print("❌ No puede bajar del mínimo 25.")
+        print(" No puede bajar del mínimo 25.")
         return
 
     fila[1].value = nueva
     wb.save(ARCHIVO)
-    print("✅ Venta registrada en Excel.")
+    print(" Venta registrada en Excel.")
 
 
 def mostrar_inventario():
     wb = abrir_excel()
     ws = wb["Inventario"]
 
-    print("\n📊 INVENTARIO ACTUAL:")
+    print("\n INVENTARIO ACTUAL:")
     for fila in ws.iter_rows(values_only=True):
         print(fila)
 
@@ -145,7 +145,7 @@ def menu():
             case "4":
                 break
             case _:
-                print("❌ Opción inválida")
+                print("Opción inválida")
 
 
 if __name__ == "__main__":
