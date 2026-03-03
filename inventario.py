@@ -13,7 +13,6 @@ PRECIOS = {
     "Uva": 0.80,
     "Fresa": 0.70,
     "Melon": 1.00,
-    "Sandia": 1.20,
     "Piña": 1.50,
     "Mango": 1.80,
     "Kiwi": 1.00,
@@ -111,7 +110,7 @@ def agregar_fruta():
         fila[1].value = nueva_cantidad
     else:
         if cantidad < CANTIDAD_MINIMA:
-            print("La cantidad inicial debe ser al menos 25.")
+            print("La cantidad inicial debe ser al menos 1.")
             return
 
         if cantidad > CANTIDAD_MAXIMA:
